@@ -3,9 +3,10 @@ MacOs desktop app (but with minor modifications it can also run on web + ios/and
 movies from Letterboxd and https://www.themoviedb.org/'s public API for movie information.
 
 
-<img width="773" alt="Screenshot 2024-09-27 at 16 23 58" src="https://github.com/user-attachments/assets/64844f9f-19b1-49ba-bd37-e788113bf770">
+<img width="1375" alt="Screenshot 2024-09-27 at 16 34 07" src="https://github.com/user-attachments/assets/82998a54-ada0-4e26-8989-418945f51c2c">
 
-<img width="777" alt="Screenshot 2024-09-27 at 16 23 14" src="https://github.com/user-attachments/assets/469e7a8d-a899-4578-af7b-905b14743080">
+<img width="1370" alt="Screenshot 2024-09-27 at 16 33 45" src="https://github.com/user-attachments/assets/798502ea-984d-4989-a7ae-7245e461e73c">
+
 
 <img width="1434" alt="Screenshot 2024-09-03 at 16 26 13" src="https://github.com/user-attachments/assets/cc159460-64a7-44ff-b040-a20209d9002b">
 
