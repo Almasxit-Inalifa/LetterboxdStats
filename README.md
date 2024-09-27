@@ -28,9 +28,9 @@ movies from Letterboxd and https://www.themoviedb.org/'s public API for movie in
 
 <img width="1435" alt="Screenshot 2024-09-03 at 16 18 27" src="https://github.com/user-attachments/assets/15f59cc6-e68c-467c-8725-a8a26af9bc55">
 
-<img width="1429" alt="Screenshot 2024-09-03 at 16 22 41" src="https://github.com/user-attachments/assets/904507af-0c21-4f66-9628-5c0aed4255f7">
-
 <img width="1432" alt="Screenshot 2024-09-03 at 16 21 15" src="https://github.com/user-attachments/assets/e6d692bd-6492-45f7-8de6-bbdfdce24be0">
+
+<img width="1429" alt="Screenshot 2024-09-03 at 16 22 41" src="https://github.com/user-attachments/assets/904507af-0c21-4f66-9628-5c0aed4255f7">
 
 <img width="1434" alt="Screenshot 2024-09-03 at 16 22 55" src="https://github.com/user-attachments/assets/1d29b7a2-aac4-4714-ac2f-617f4006e548">
 
