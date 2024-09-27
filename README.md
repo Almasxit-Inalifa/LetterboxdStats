@@ -6,9 +6,9 @@ movies from Letterboxd and https://www.themoviedb.org/'s public API for movie in
 
 <img width="1375" alt="Screenshot 2024-09-27 at 16 34 07" src="https://github.com/user-attachments/assets/82998a54-ada0-4e26-8989-418945f51c2c">
 
-<img width="1434" alt="Screenshot 2024-09-03 at 16 26 13" src="https://github.com/user-attachments/assets/cc159460-64a7-44ff-b040-a20209d9002b">
-
 <img width="1433" alt="Screenshot 2024-09-03 at 16 25 49" src="https://github.com/user-attachments/assets/43972c75-ea35-432d-b06d-09577ac8de44">
+
+<img width="1434" alt="Screenshot 2024-09-03 at 16 26 13" src="https://github.com/user-attachments/assets/cc159460-64a7-44ff-b040-a20209d9002b">
 
 <img width="1432" alt="Screenshot 2024-09-03 at 16 25 36" src="https://github.com/user-attachments/assets/112b784b-7494-452b-b0d0-8a0d9af55ec5">
 
@@ -30,7 +30,7 @@ movies from Letterboxd and https://www.themoviedb.org/'s public API for movie in
 
 <img width="1429" alt="Screenshot 2024-09-03 at 16 22 41" src="https://github.com/user-attachments/assets/904507af-0c21-4f66-9628-5c0aed4255f7">
 
-<img width="1432" alt="Screenshot 2024-09-03 at 16 21 15" src="https://github.com/user-attachments/assets/e6d692bd-6492-45f7-8de6-bbdfdce24>
+<img width="1432" alt="Screenshot 2024-09-03 at 16 21 15" src="https://github.com/user-attachments/assets/e6d692bd-6492-45f7-8de6-bbdfdce24be0">
 
 <img width="1434" alt="Screenshot 2024-09-03 at 16 22 55" src="https://github.com/user-attachments/assets/1d29b7a2-aac4-4714-ac2f-617f4006e548">
-be0">
+
