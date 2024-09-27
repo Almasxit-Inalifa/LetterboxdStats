@@ -2,11 +2,9 @@ As you have to pay 19$ to get access to your Letterboxd account statistics, I de
 MacOs desktop app (but with minor modifications it can also run on web + ios/android). Letterboxd API is not public, so I used web scraping for getting users's
 movies from Letterboxd and https://www.themoviedb.org/'s public API for movie information.
 
-
-<img width="1375" alt="Screenshot 2024-09-27 at 16 34 07" src="https://github.com/user-attachments/assets/82998a54-ada0-4e26-8989-418945f51c2c">
-
 <img width="1370" alt="Screenshot 2024-09-27 at 16 33 45" src="https://github.com/user-attachments/assets/798502ea-984d-4989-a7ae-7245e461e73c">
 
+<img width="1375" alt="Screenshot 2024-09-27 at 16 34 07" src="https://github.com/user-attachments/assets/82998a54-ada0-4e26-8989-418945f51c2c">
 
 <img width="1434" alt="Screenshot 2024-09-03 at 16 26 13" src="https://github.com/user-attachments/assets/cc159460-64a7-44ff-b040-a20209d9002b">
 
