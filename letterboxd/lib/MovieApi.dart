@@ -4,7 +4,7 @@ import 'package:letterboxd/Models/MovieDetails.dart';
 import 'package:letterboxd/Models/Person.dart';
 
 class MovieApi {
-  final String API_KEY = '329f9554661d8ec74f3940e9648b4a69';
+  final String API_KEY = 'dff3e3666aa2ba584973f16b9f8f6ca1';
   final String baseUrl = 'https://api.themoviedb.org/3';
 
   Future<PosterUrlAndId> getMoviePoster(String movieName, int year) async {
@@ -17,14 +17,17 @@ class MovieApi {
       final data = json.decode(response.body);
       final results = data['results'];
       if (results.isNotEmpty) {
+        print("NOT EMPTY");
         final posterPath = results[0]['poster_path'];
         final movieId = results[0]['id'];
+        print('movieId $movieId');
 
         print('MovieName: $movieName, PosterPath: $posterPath Id: movieId');
 
         return PosterUrlAndId(
             'https://image.tmdb.org/t/p/w500$posterPath', movieId);
       } else {
+        print("EMPTY");
         url = Uri.parse(
             '$baseUrl/search/tv?api_key=$API_KEY&query=$movieName&year=$year');
         response = await http.get(url);
@@ -63,6 +66,8 @@ class MovieApi {
           }
         }
       }
+
+      print("FAIL");
     } else {
       print('Failed to load poster');
     }

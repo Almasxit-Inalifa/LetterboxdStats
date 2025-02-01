@@ -16,6 +16,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
     return Scaffold(
         appBar: MyAppBar(type: 'logo', onTap: onTapSelected, selectedIndex: 0),
-        body: EnterUsername());
+        body: const EnterUsername());
   }
 }

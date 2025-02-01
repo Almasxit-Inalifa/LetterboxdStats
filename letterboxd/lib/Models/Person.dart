@@ -7,7 +7,7 @@ class Person implements Comparable {
   Person(String name, String imageLink, bool isDirector) {
     this.name = name;
     this.imageLink = imageLink;
-    this.personLink = convertToPrefix(name, isDirector);
+    personLink = convertToPrefix(name, isDirector);
   }
 
   @override

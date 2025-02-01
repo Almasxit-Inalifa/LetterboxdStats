@@ -59,17 +59,18 @@ class _CountriesAndLanguagesState extends State<CountriesAndLanguages> {
 
     Widget limited = Text(
       'Only ${widget.isCountry ? 'countries' : 'languages'} with at least three rated films are included.',
-      style: TextStyle(color: Color.fromARGB(255, 153, 153, 153)),
+      style: const TextStyle(color: Color.fromARGB(255, 153, 153, 153)),
       overflow: TextOverflow.ellipsis,
     );
 
     var firstTenEntries = sortedEntries.take(10);
     Map<String, num> firstTenMap = Map.fromEntries(firstTenEntries);
-    if (firstTenMap.isEmpty)
+    if (firstTenMap.isEmpty) {
       return Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [limited],
       );
+    }
 
     num? max = firstTenMap[firstTenMap.keys.toList()[0]];
 
@@ -87,7 +88,7 @@ class _CountriesAndLanguagesState extends State<CountriesAndLanguages> {
       countries.insert(
           0,
           Container(
-            child: Padding(padding: EdgeInsets.all(4.0), child: limited),
+            child: Padding(padding: const EdgeInsets.all(4.0), child: limited),
           ));
     }
 

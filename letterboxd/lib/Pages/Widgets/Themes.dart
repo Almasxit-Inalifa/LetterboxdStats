@@ -51,7 +51,7 @@ class _ThemesState extends State<Themes> {
 
     final firstTwentyEntries = sortedEntries.take(20);
 
-    if (firstTwentyEntries.isEmpty) return Row();
+    if (firstTwentyEntries.isEmpty) return const Row();
 
     final firstTwentyMap = Map.fromEntries(firstTwentyEntries);
     final entryKeys = firstTwentyMap.keys.toList();
@@ -59,8 +59,9 @@ class _ThemesState extends State<Themes> {
 
     final List<ThemeLetterboxd> leftKeys = entryKeys.sublist(0, middleIndex);
     List<ThemeLetterboxd> rightKeys = [];
-    if (middleIndex < entryKeys.length)
+    if (middleIndex < entryKeys.length) {
       rightKeys = entryKeys.sublist(middleIndex);
+    }
 
     final max = firstTwentyMap[entryKeys[0]]!.toDouble();
 
@@ -103,7 +104,7 @@ class ThemeColumn<T> extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (keys.isEmpty) return Column();
+    if (keys.isEmpty) return const Column();
 
     final theme = Theme.of(context);
     int fixed = 2;
@@ -113,7 +114,7 @@ class ThemeColumn<T> extends StatelessWidget {
       return Padding(
         padding: const EdgeInsets.all(4.0),
         child: Link(
-          url: 'https://letterboxd.com/' + key.link,
+          url: 'https://letterboxd.com/${key.link}',
           hoverConfig: HoverConfig(),
           child: Container(
             width: MediaQuery.of(context).size.width * 0.47,
@@ -170,12 +171,12 @@ class ThemeColumn<T> extends StatelessWidget {
     if (addExtra) {
       column.add(Padding(
         padding: const EdgeInsets.all(4.0),
-        child: Container(
+        child: SizedBox(
           width: MediaQuery.of(context).size.width * 0.47,
           height: MediaQuery.of(context).size.height *
               0.50 /
               (keys.length + (addExtra ? 1 : 0)),
-          child: Row(),
+          child: const Row(),
         ),
       ));
     }

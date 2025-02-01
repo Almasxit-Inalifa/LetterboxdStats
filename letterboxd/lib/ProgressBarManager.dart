@@ -7,7 +7,7 @@ class ProgressBarManager with ChangeNotifier {
 
   void startDownload() {
     // Simulate a download by periodically updating progress
-    Future.delayed(Duration(seconds: 1), () {
+    Future.delayed(const Duration(seconds: 1), () {
       _progress += 0.2;
       if (_progress <= 1.0) {
         notifyListeners();

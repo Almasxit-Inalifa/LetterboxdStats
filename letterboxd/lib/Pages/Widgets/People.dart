@@ -54,7 +54,7 @@ class _PeopleState extends State<People> {
             widget.peopleCount, (person) => person.toString(), theme, false);
       case 'Highest Rated':
         return _buildPeopleList(widget.peopleRating,
-            (rating) => 'Average: ' + rating.toStringAsFixed(2), theme, true);
+            (rating) => 'Average: ${rating.toStringAsFixed(2)}', theme, true);
       default:
         return Container();
     }
@@ -68,12 +68,15 @@ class _PeopleState extends State<People> {
     int peopleNum = sortedEntries.length;
 
     var rowInfoList = [sortedEntries.take(5)];
-    if (sortedEntries.length > 5)
+    if (sortedEntries.length > 5) {
       rowInfoList.add(sortedEntries.sublist(5, min(10, peopleNum)));
-    if (sortedEntries.length > 10)
+    }
+    if (sortedEntries.length > 10) {
       rowInfoList.add(sortedEntries.sublist(10, min(15, peopleNum)));
-    if (sortedEntries.length > 15)
+    }
+    if (sortedEntries.length > 15) {
       rowInfoList.add(sortedEntries.sublist(15, min(20, peopleNum)));
+    }
 
     List<Widget> rows = [];
     for (int i = 0; i < min(rowsToShow, rowInfoList.length); i++) {
@@ -149,6 +152,10 @@ class PersonCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Link(
                 url: person.personLink,
+                hoverConfig: HoverConfig(
+                  elevationOnHover: 0,
+                  translationYOnHover: -5,
+                ),
                 child: ClipOval(
                   child: Image.network(
                     picLink,
@@ -156,10 +163,6 @@ class PersonCard extends StatelessWidget {
                     height: size,
                     fit: BoxFit.cover,
                   ),
-                ),
-                hoverConfig: HoverConfig(
-                  elevationOnHover: 0,
-                  translationYOnHover: -5,
                 ),
               ),
             ),

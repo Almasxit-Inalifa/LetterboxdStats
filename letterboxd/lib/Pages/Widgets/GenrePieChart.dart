@@ -89,7 +89,7 @@ class _GenrePieChartState extends State<GenrePieChart> {
   }
 
   void _handleGenreTap(String genre, String username) {
-    launchUrl(Uri.parse('https://letterboxd.com/$username/films/genre/' +
-        genre.replaceAll(' ', '-').toLowerCase()));
+    launchUrl(Uri.parse(
+        'https://letterboxd.com/$username/films/genre/${genre.replaceAll(' ', '-').toLowerCase()}'));
   }
 }

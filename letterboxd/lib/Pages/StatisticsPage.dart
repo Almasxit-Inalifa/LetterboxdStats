@@ -43,7 +43,7 @@ class _StatisticsPageState extends State<StatisticsPage> {
     }
 
     final List<Widget> stats = [
-      EnterUsername(),
+      const EnterUsername(),
       Genres(
           genreCount: widget.data.genreCount,
           genreRating: widget.data.genreRating,

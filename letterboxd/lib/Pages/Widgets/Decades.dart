@@ -15,7 +15,7 @@ class Decades extends StatelessWidget {
     List<Widget> decadeRows = decades.entries.map((entry) {
       int decade = entry.key;
       List<RatedMovie> movies = entry.value;
-      if (movies.isEmpty) return Row();
+      if (movies.isEmpty) return const Row();
 
       List<RatedMovie> firstTen = movies.sublist(0, min(10, movies.length));
       print(firstTen.toString());
@@ -119,6 +119,10 @@ class GetTenMovies extends StatelessWidget {
           width: width,
           height: height,
           fit: BoxFit.cover,
+          errorBuilder: (context, error, stackTrace) {
+            print('Failed to load image: ${movie.imgLink}, Error: $error');
+            return const Icon(Icons.error, color: Colors.red);
+          },
         );
       }
 

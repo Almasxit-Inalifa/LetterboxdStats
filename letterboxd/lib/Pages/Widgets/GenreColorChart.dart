@@ -55,7 +55,7 @@ class GenreColorChart extends StatelessWidget {
 
       if (colorRowsLeft.length != colorRowsRight.length) {
         colorRowsRight.add(
-          Row(
+          const Row(
             children: [
               SizedBox(
                 width: 20,

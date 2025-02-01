@@ -63,6 +63,8 @@ class Webscraper {
       MovieDetails movieDetails =
           await MovieApi().getMovieDetails(posterUrlAndId.id);
 
+      print('Movie Details $movieDetails');
+
       GenresAndThemes genresAndThemes = getGenresAndThemes(document);
       CountriesAndLanguages countriesAndLanguages =
           getCountriesAndLanguages(document);
@@ -204,16 +206,18 @@ class Webscraper {
       });
 
       for (String genre in curData.genresAndThemes.genres) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           genreRated.update(genre, (value) => value + 1, ifAbsent: () => 1);
+        }
         genresCount.update(genre, (value) => value + 1, ifAbsent: () => 1);
         genresRating.update(genre, (value) => value + movie.rating,
             ifAbsent: () => movie.rating);
       }
 
       for (ThemeLetterboxd theme in curData.genresAndThemes.themes) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           themeRated.update(theme, (value) => value + 1, ifAbsent: () => 1);
+        }
 
         themesCount.update(theme, (value) => value + 1, ifAbsent: () => 1);
         themesRating.update(theme, (value) => value + movie.rating,
@@ -221,9 +225,10 @@ class Webscraper {
       }
 
       for (Person director in curData.directors) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           directorRated.update(director, (value) => value + 1,
               ifAbsent: () => 1);
+        }
         directorsCount.update(director, (value) => value + 1,
             ifAbsent: () => 1);
 
@@ -232,8 +237,9 @@ class Webscraper {
       }
 
       for (Person actor in curData.actors) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           actorRated.update(actor, (value) => value + 1, ifAbsent: () => 1);
+        }
         actorsCount.update(actor, (value) => value + 1, ifAbsent: () => 1);
 
         actorsRating.update(actor, (value) => value + movie.rating,
@@ -241,17 +247,19 @@ class Webscraper {
       }
 
       for (String country in curData.countriesAndLanguages.countries) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           countryRated.update(country, (value) => value + 1, ifAbsent: () => 1);
+        }
         countriesCount.update(country, (value) => value + 1, ifAbsent: () => 1);
         countriesRating.update(country, (value) => value + movie.rating,
             ifAbsent: () => movie.rating);
       }
 
       for (String language in curData.countriesAndLanguages.languages) {
-        if (movie.rating > 0)
+        if (movie.rating > 0) {
           languageRated.update(language, (value) => value + 1,
               ifAbsent: () => 1);
+        }
         languageCount.update(language, (value) => value + 1, ifAbsent: () => 1);
         languageRating.update(language, (value) => value + movie.rating,
             ifAbsent: () => movie.rating);
@@ -331,31 +339,6 @@ class Webscraper {
     return GenresAndThemes(genres, themes);
   }
 
-  // Future<List<Person>> getDirectors(Document document) async {
-  //   final wrapper = document.querySelector('#film-page-wrapper');
-
-  //   if (wrapper == null) return [];
-  //   final contributor = wrapper.querySelectorAll('.contributor');
-
-  //   List<String> directorLinks = contributor.map((e) {
-  //     String? href = e.attributes['href'];
-  //     return href?.trim() ?? ''; // Trim the href if not null
-  //   }).toList();
-
-  //   // print('Count: ${directorLinks.length}');
-  //   // for (final directorLink in directorLinks) {
-  //   //   print('DIRECTOR $directorLink');
-  //   // }
-
-  //   List<Person> directors = [];
-  //   for (String directorLink in directorLinks) {
-  //     Person cur = await getPersonInfo(directorLink, true);
-  //     directors.add(cur);
-  //   }
-
-  //   return directors;
-  // }
-
   CountriesAndLanguages getCountriesAndLanguages(Document document) {
     final detailsTab = document.querySelector("#tab-details");
 
@@ -404,93 +387,42 @@ class Webscraper {
     return CountriesAndLanguages(countries, languages);
   }
 
-  // int getMovieLength(Document document) {
-  //   final wrapper = document.querySelector('#film-page-wrapper');
-
-  //   if (wrapper == null) return 0;
-  //   final minutesTab = wrapper.querySelectorAll('.text-link');
-
-  //   List<String> minutesStrings = minutesTab.map((e) => e.text.trim()).toList();
-
-  //   // print('MOVIE LENGTH: ${directors.length}');
-  //   // for (final director in directors) {
-  //   //   print(director);
-  //   // }
-
-  //   //print('As str: ' + directors[0].substring(0, 3));
-  //   String sub = minutesStrings[0].substring(0, 3);
-  //   if (int.tryParse(sub) != null) {
-  //     return int.parse(sub);
-  //   } else {
-  //     return 0;
-  //   }
-  // }
-
-  // Future<Person> getPersonInfo(String link, bool isDirector) async {
-  //   final response = await http.get(Uri.parse('https://letterboxd.com$link'));
-
-  //   if (response.statusCode == 200) {
-  //     // Parse the HTML
-  //     final document = parse(response.body);
-  //     final h1 = document.querySelectorAll('.contextual-title > h1');
-
-  //     List<String> query = h1.map((e) => e.text.trim()).toList();
-
-  //     // print('Count: ${name.length}');
-  //     // for (final n in name) {
-  //     //   print('this $name');
-  //     // }
-  //     String name = '';
-
-  //     if (query.isNotEmpty) {
-  //       if (isDirector) {
-  //         name = query[0].substring(query[0].indexOf('by') + 3).trim();
-  //       } else {
-  //         name = query[0].substring(query[0].indexOf('starring') + 9).trim();
-  //       }
-  //       print('Name is $name');
-  //     }
-
-  //     final imgElement = document.querySelector('.avatar img');
-  //     String? imageUrl = imgElement?.attributes['data-image'];
-  //     print(imageUrl);
-
-  //     imageUrl ??= '';
-  //     // List<String> links = imgElement.map((e) {
-  //     //   String? href = e.attributes['src'];
-  //     //   return href?.trim() ?? ''; // Trim the href if not null
-  //     // }).toList();
-
-  //     // print(links.toString());
-  //     // print('img Count: ${links.length}');
-  //     // for (final i in links) {
-  //     //   print('img $i');
-  //     // }
-  //     return Person(name, imageUrl);
-  //   } else {
-  //     return Person('', '');
-  //   }
-  // }
-
   int getYear(Document document) {
-    String? year = document.querySelector('.releaseyear')?.text;
-    if (year == null) return 0;
-    print(year);
-
-    if (int.tryParse(year) != null) {
-      return int.parse(year);
-    } else {
+    var yearElement = document
+        .querySelector('.releaseyear a'); // Select <a> inside .releaseyear
+    if (yearElement == null) {
+      print("Year not found!");
       return 0;
     }
+
+    String year = yearElement.text.trim();
+    print('YEAR EXTRACTED: $year');
+
+    return int.tryParse(year) ?? 0; // Ensure valid integer
   }
 
   String getTitle(Document document) {
-    //#film-page-wrapper > div.col-17 > section.film-header-group > div > h1 > span
-    String? title = document.querySelector('.filmtitle')?.text;
-    //print(document.querySelector('.filmtitle')?.outerHtml);
-    title ??= '';
-    //print('This Title: ' + title!);
+    // Try extracting from .js-title
+    Element? titleElement = document.querySelector('.js-title');
+    if (titleElement != null && titleElement.text.trim().isNotEmpty) {
+      // print("TITLE EXTRACTED FROM .js-title: ${titleElement.text.trim()}");
+      return titleElement.text.trim();
+    }
 
-    return title;
+    // Fallback: Extract from <title>
+    Element? pageTitle = document.querySelector('title');
+    if (pageTitle != null && pageTitle.text.contains(" • Letterboxd")) {
+      String extractedTitle = pageTitle.text.split(" • ").first.trim();
+
+      // Remove any year (like "(2002)") or director name if present
+      extractedTitle =
+          extractedTitle.replaceAll(RegExp(r'\(\d{4}\).*'), '').trim();
+
+      // print("TITLE EXTRACTED FROM <title>: $extractedTitle");
+      return extractedTitle;
+    }
+
+    // print("TITLE NOT FOUND");
+    return '';
   }
 }

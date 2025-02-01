@@ -228,7 +228,7 @@ class _GenresState extends State<Genres> {
   }
 
   void _handleBarTap(String genre, String username) {
-    launchUrl(Uri.parse('https://letterboxd.com/$username/films/genre/' +
-        genre.replaceAll(' ', '-').toLowerCase()));
+    launchUrl(Uri.parse(
+        'https://letterboxd.com/$username/films/genre/${genre.replaceAll(' ', '-').toLowerCase()}'));
   }
 }

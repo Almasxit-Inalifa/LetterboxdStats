@@ -81,10 +81,16 @@ class ByYear<V extends num> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var theme = Theme.of(context);
-    List<int> yearsList = yearStats.keys.toList();
-    if (yearsList.isEmpty) return const Row();
-    if (yearsList[0] == 0) yearsList.remove(0);
+    List<int> yearsListKeys = yearStats.keys.toList();
 
+    List<int> yearsList = [];
+    for (var i = 0; i < yearsListKeys.length; i++) {
+      if (yearsListKeys.elementAt(i) > 0) {
+        yearsList.add(yearsListKeys.elementAt(i));
+      }
+    }
+
+    if (yearsList.isEmpty) return const Row();
     int firstYear = yearsList.first;
     int lastYear = yearsList.last;
 
@@ -122,15 +128,15 @@ class ByYear<V extends num> extends StatelessWidget {
         message: message,
         child: Link(
           url: 'https://letterboxd.com/$username/films/year/$year/',
-          child: Container(
-            color: color,
-            height: height,
-            width: MediaQuery.of(context).size.width * 0.9 / (years.length + 2),
-          ),
           hoverConfig: HoverConfig(
             hoverColor: Colors.blue[100],
             elevationOnHover: 12,
             translationYOnHover: -8,
+          ),
+          child: Container(
+            color: color,
+            height: height,
+            width: MediaQuery.of(context).size.width * 0.9 / (years.length + 2),
           ),
         ),
       );

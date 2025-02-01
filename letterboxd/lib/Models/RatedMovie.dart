@@ -6,7 +6,7 @@ class RatedMovie {
 
   RatedMovie(String name, String link, String imgLink, double rating) {
     this.name = name;
-    this.movieLink = link;
+    movieLink = link;
     this.imgLink = imgLink;
     this.rating = rating;
   }
@@ -16,7 +16,7 @@ class RatedMovie {
   }
 
   void setImgLink(String imageLink) {
-    this.imgLink = imageLink;
+    imgLink = imageLink;
   }
 
   @override

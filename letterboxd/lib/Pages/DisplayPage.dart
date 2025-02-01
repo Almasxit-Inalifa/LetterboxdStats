@@ -9,7 +9,7 @@ import '../WebScraper.dart';
 class DisplayPage extends StatefulWidget {
   final String username;
 
-  DisplayPage({Key? key, required this.username}) : super(key: key);
+  const DisplayPage({super.key, required this.username});
 
   @override
   _DisplayPageState createState() => _DisplayPageState();
@@ -73,7 +73,7 @@ class _DisplayPageState extends State<DisplayPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            EnterUsername(),
+            const EnterUsername(),
             Padding(
               padding: const EdgeInsets.only(top: 50),
               child: Text(
@@ -93,7 +93,7 @@ class _DisplayPageState extends State<DisplayPage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            EnterUsername(),
+            const EnterUsername(),
             Padding(
               padding: const EdgeInsets.only(top: 50),
               child: Text(
