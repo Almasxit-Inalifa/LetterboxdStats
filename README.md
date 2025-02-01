@@ -9,4 +9,5 @@ As I dont want to pay 19$ for Letterboxd Stats, I decided to write one on my one
 <img width="1431" alt="Screenshot 2024-09-03 at 16 21 58" src="https://github.com/user-attachments/assets/672956ea-e2fe-4b9e-9aff-44d3ad542139" />
 <img width="1432" alt="Screenshot 2024-09-03 at 16 21 15" src="https://github.com/user-attachments/assets/2ed5c64d-213c-41a9-9614-3c4afa930a17" />
 <img width="1432" alt="Screenshot 2024-09-03 at 16 23 09" src="https://github.com/user-attachments/assets/3f42fe76-411e-427a-a5eb-97824286acf9" />
-![Uploading Screenshot 2024-09-03 at 16.22.55.png…]()
+<img width="1434" alt="Screenshot 2024-09-03 at 16 22 55" src="https://github.com/user-attachments/assets/bcceb070-196b-486b-b6b0-6de0f5be2bba" />
+
